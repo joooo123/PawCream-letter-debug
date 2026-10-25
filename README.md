@@ -17,3 +17,5 @@
 Letter copy was resynced from the latest `feat/xiaohongshu-mini-tool` source. The tagline is now bound to the same source object as the title and body.
 
 调试页文案已恢复为甜品店风格版本：中文正文、英文正文和副标题均已更新。
+
+排版调整：品牌正文段落之间改为单换行，不再留空白行。
