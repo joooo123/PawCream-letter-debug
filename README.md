@@ -19,3 +19,5 @@ Letter copy was resynced from the latest `feat/xiaohongshu-mini-tool` source. Th
 调试页文案已恢复为甜品店风格版本：中文正文、英文正文和副标题均已更新。
 
 排版调整：品牌正文段落之间改为单换行，不再留空白行。
+
+新增正文手动换行编辑器：可在需要的位置按 Enter，实时预览换行；保存/恢复参数和复制参数均包含正文内容及换行。
