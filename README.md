@@ -23,3 +23,5 @@ Letter copy was resynced from the latest `feat/xiaohongshu-mini-tool` source. Th
 新增正文手动换行编辑器：可在需要的位置按 Enter，实时预览换行；保存/恢复参数和复制参数均包含正文内容及换行。
 
 层级修复：信纸文字层已独立于纸张图片层，置于信封前片之上；标题和文字容器改为允许溢出，避免标题顶部被自身容器裁切。
+
+Updated tuning defaults and dessert-shop copy from the supplied JSON. Browser storage key bumped so stale saved values do not override the new defaults. The topmost text layer fix is retained.
