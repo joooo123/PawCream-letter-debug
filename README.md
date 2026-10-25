@@ -13,3 +13,5 @@
 调试页已更新：移动端信纸参数现与小红书分支默认值对齐，并放大模拟视口中的信封。推送此提交以触发 Pages 更新。
 
 修正说明：移动端预览现在使用与小红书实际视口匹配的信封尺寸；桌面参数预览保持原尺寸。
+
+Letter copy was resynced from the latest `feat/xiaohongshu-mini-tool` source. The tagline is now bound to the same source object as the title and body.
