@@ -15,3 +15,5 @@
 修正说明：移动端预览现在使用与小红书实际视口匹配的信封尺寸；桌面参数预览保持原尺寸。
 
 Letter copy was resynced from the latest `feat/xiaohongshu-mini-tool` source. The tagline is now bound to the same source object as the title and body.
+
+调试页文案已恢复为甜品店风格版本：中文正文、英文正文和副标题均已更新。
