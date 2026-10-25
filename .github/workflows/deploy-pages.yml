@@ -1,0 +1,67 @@
+name: Deploy Letter Debug Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: letter-debug-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout debug site repository
+        uses: actions/checkout@v4
+
+      - name: Checkout PawCream debug source and assets
+        uses: actions/checkout@v4
+        with:
+          repository: joooo123/PawCream
+          ref: debug-brand-letter-lab
+          path: pawcream-source
+
+      - name: Assemble static preview
+        run: |
+          mkdir -p dist/xhs-letter-debug dist/assets/envelop dist/assets/font
+          cp pawcream-source/public/xhs-letter-debug/index.html dist/xhs-letter-debug/index.html
+          cp pawcream-source/public/assets/envelop/back.png dist/assets/envelop/
+          cp pawcream-source/public/assets/envelop/paper.png dist/assets/envelop/
+          cp pawcream-source/public/assets/envelop/front.png dist/assets/envelop/
+          cp pawcream-source/public/assets/font/AaZiTiGuanJiaWanWanTi-2.ttf dist/assets/font/
+          cp pawcream-source/public/assets/font/Apple-Regular.ttf dist/assets/font/
+          cat > dist/index.html <<'EOF'
+          <!doctype html>
+          <html lang="zh-CN">
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta http-equiv="refresh" content="0; url=./xhs-letter-debug/">
+          <title>PawCream Letter Debug</title>
+          <p><a href="./xhs-letter-debug/">打开 PawCream 信纸调试实验室</a></p>
+          </html>
+          EOF
+          test -s dist/xhs-letter-debug/index.html
+          test -s dist/assets/envelop/paper.png
+          test -s dist/assets/font/AaZiTiGuanJiaWanWanTi-2.ttf
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
