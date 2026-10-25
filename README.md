@@ -7,3 +7,5 @@
 - 预览地址：https://joooo123.github.io/PawCream-letter-debug/xhs-letter-debug/
 
 在调试网页中调整纸张宽度、高度、位置、文字区域和中英文大小，并可复制参数。
+
+部署状态由 GitHub Actions 自动维护；若修改调试源，请重新运行 `Deploy Letter Debug Pages` 工作流。
