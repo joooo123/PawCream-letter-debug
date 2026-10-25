@@ -27,3 +27,5 @@ Letter copy was resynced from the latest `feat/xiaohongshu-mini-tool` source. Th
 Updated tuning defaults and dessert-shop copy from the supplied JSON. Browser storage key bumped so stale saved values do not override the new defaults. The topmost text layer fix is retained.
 
 Added independent Chinese and English body line-height controls in the debug panel. English defaults to 1.2× to reduce excessive spacing; Chinese retains 1.62× on mobile and 1.76× on desktop. Text top-layer fix and manual line-break editor remain intact.
+
+Updated independent debug preview with the latest English copy and previous Chinese copy, including the supplied mobile parameters and manual line breaks. The topmost text layer and independent line-height controls are retained.
