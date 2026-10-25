@@ -25,3 +25,5 @@ Letter copy was resynced from the latest `feat/xiaohongshu-mini-tool` source. Th
 层级修复：信纸文字层已独立于纸张图片层，置于信封前片之上；标题和文字容器改为允许溢出，避免标题顶部被自身容器裁切。
 
 Updated tuning defaults and dessert-shop copy from the supplied JSON. Browser storage key bumped so stale saved values do not override the new defaults. The topmost text layer fix is retained.
+
+Added independent Chinese and English body line-height controls in the debug panel. English defaults to 1.2× to reduce excessive spacing; Chinese retains 1.62× on mobile and 1.76× on desktop. Text top-layer fix and manual line-break editor remain intact.
