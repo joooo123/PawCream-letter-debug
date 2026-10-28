@@ -15,56 +15,56 @@
 <script>
 const defaults={
   "desktop": {
-    "paperLeft": 7,
-    "paperTop": -20,
-    "paperWidth": 86,
-    "paperHeight": 86,
-    "paperScale": 0.88,
-    "paperStretchX": 1,
-    "paperRotate": 0,
-    "startY": 35,
-    "endY": 9,
-    "textLeft": 12,
-    "textTop": 13,
-    "textWidth": 76,
-    "textHeight": 56,
-    "titleLeft": 0,
-    "titleTop": 0,
-    "titleWidth": 100,
-    "titleHeight": 18,
-    "titleSize": 31.5,
-    "titleFontScaleX": 1,
-    "titleFontScaleY": 1,
-    "zhBodyLeft": 0,
-    "zhBodyTop": 29,
-    "zhBodyWidth": 100,
-    "zhBodyHeight": 64,
-    "zhBodySize": 18.5,
-    "zhBodyFontScaleX": 1,
-    "zhBodyFontScaleY": 1,
-    "enBodyLeft": 0,
-    "enBodyTop": 29,
-    "enBodyWidth": 100,
-    "enBodyHeight": 64,
-    "enBodySize": 17.5,
-    "enBodyFontScaleX": 1,
-    "enBodyFontScaleY": 1,
-    "bodyLineHeight": 1.5,
-    "zhBodyLineHeight": 1.5,
-    "enBodyLineHeight": 1.4,
-    "subtitleLeft": 0,
-    "subtitleTop": 18,
-    "zhSubtitleTop": 18,
-    "enSubtitleTop": 18,
-    "subtitleWidth": 100,
-    "subtitleHeight": 10,
-    "subtitleSize": 20,
-    "subtitleFontScaleX": 1,
-    "subtitleFontScaleY": 1,
-    "riseMs": 4000,
-    "typeGapMs": 30,
-    "typeDelayZh": 58,
-    "typeDelayEn": 32
+      "paperLeft": 7,
+      "paperTop": -20,
+      "paperWidth": 89,
+      "paperHeight": 98.5,
+      "paperScale": 0.88,
+      "paperStretchX": 1.17,
+      "paperRotate": 0,
+      "startY": 35,
+      "endY": 9,
+      "textLeft": 12,
+      "textTop": 13,
+      "textWidth": 76,
+      "textHeight": 56,
+      "titleLeft": 0,
+      "titleTop": 0,
+      "titleWidth": 100,
+      "titleHeight": 18,
+      "titleSize": 31.5,
+      "titleFontScaleX": 1,
+      "titleFontScaleY": 1,
+      "zhBodyLeft": 1,
+      "zhBodyTop": 28.5,
+      "zhBodyWidth": 100,
+      "zhBodyHeight": 74,
+      "zhBodySize": 18.5,
+      "zhBodyFontScaleX": 1,
+      "zhBodyFontScaleY": 1,
+      "enBodyLeft": 0.5,
+      "enBodyTop": 29,
+      "enBodyWidth": 100,
+      "enBodyHeight": 90,
+      "enBodySize": 24,
+      "enBodyFontScaleX": 1,
+      "enBodyFontScaleY": 1,
+      "bodyLineHeight": 1.5,
+      "zhBodyLineHeight": 1.7,
+      "enBodyLineHeight": 1.28,
+      "subtitleLeft": 0,
+      "subtitleTop": 18,
+      "zhSubtitleTop": 13.5,
+      "enSubtitleTop": 18,
+      "subtitleWidth": 100,
+      "subtitleHeight": 10,
+      "subtitleSize": 23,
+      "subtitleFontScaleX": 1,
+      "subtitleFontScaleY": 1,
+      "riseMs": 4000,
+      "typeGapMs": 30,
+      "typeDelayZh": 58,
+      "typeDelayEn": 32
   },
   "mobile": {
     "paperLeft": 14,
@@ -120,26 +120,26 @@ const groups=[
 const copyText = {
   "zh": {
     "title": "关于 PawCream",
-    "body": "你好呀，欢迎来到 PawCream。这里是一间装满甜蜜的娃衣小店。我们喜欢把少女的颜色、甜甜的灵感和一点点童话心思，缝进每一件小衣服里。\n愿每一次换装，都像拆开一盒期待已久的小甜点。\n       躲进糖分里，暂时逃离喧嚣的大人世界。\n                      甜蜜不止一点点，\n                      可爱也不止今天。",
+    "body": "        你好呀，欢迎来到 PawCream。这里是一间装满甜蜜的娃衣小店。我们喜欢把少女的颜色、甜甜的灵感和一点点童话心思，缝进每一件小衣服里。\n           愿每一次换装，都像拆开一盒期待已久的小甜点。\n              躲进糖分里，暂时逃离喧嚣的大人世界。\n                                 甜蜜不止一点点，\n                                 可爱也不止今天。",
     "signature": "made with a little sugar & lots of love ♡",
     "close": "关闭品牌介绍"
   },
   "en": {
     "title": "About PawCream",
-    "body": "Hello and welcome to PawCream. This is a sweet doll-clothes shop. We stitch girly colors, sweet ideas, and fairy-tale touches into each piece.Every outfit \n    change is like unboxing a long-awaited sweet.\n       Hide in sweetness, escaping the adult world \n                for a while. Sweetness and \n                    cuteness linger beyond\n                             today.\n",
+    "body": "     Hello and welcome to PawCream. This is a sweet doll-clothes shop. We stitch girly colors, sweet ideas, and fairy-tale touches into each piece.Every outfit change is like unboxing a long-awaited       \n          sweet. Hide in sweetness, escaping the adult world \n                   for a while. Sweetness and \n                            cuteness linger beyond\n                                     today.\n",
     "signature": "made with a little sugar & lots of love ♡",
     "close": "Close brand introduction"
   }
 };
 let profile="desktop",language="zh",preview="end",values=JSON.parse(JSON.stringify(defaults));
-function readSaved(){try{return JSON.parse(localStorage.getItem("pawcream-letter-lab-desktop-v1"))}catch(e){return null}}
+function readSaved(){try{return JSON.parse(localStorage.getItem("pawcream-letter-lab-desktop-v2"))}catch(e){return null}}
 const prior=readSaved();if(prior)if(prior.desktop)values.desktop=Object.assign({},values.desktop,prior.desktop);
 const $=id=>document.getElementById(id);
 function renderControls(){const root=$("controls");root.innerHTML="";groups.forEach(g=>{const fs=document.createElement("fieldset"),legend=document.createElement("legend");legend.textContent=g[0];fs.append(legend);g[1].forEach(item=>{const key=item[0],row=document.createElement("label");row.className="control";const name=document.createElement("span");name.textContent=item[1];const range=document.createElement("input");range.type="range";range.min=item[2];range.max=item[3];range.step=item[4];range.value=values[profile][key];range.dataset.key=key;const num=document.createElement("input");num.type="number";num.min=item[2];num.max=item[3];num.step=item[4];num.value=values[profile][key];num.dataset.key=key;const unit=document.createElement("span");unit.className="unit";unit.textContent=item[5];range.oninput=()=>update(key,Number(range.value));num.onchange=()=>update(key,Number(num.value));row.append(name,range,num,unit);fs.append(row)});root.append(fs)})}
 function update(key,v){if(!Number.isFinite(v))return;const item=groups.flatMap(g=>g[1]).find(x=>x[0]===key);v=Math.max(item[2],Math.min(item[3],v));values[profile][key]=v;const inputs=$("controls").querySelectorAll("input[data-key]");inputs.forEach(x=>{if(x.dataset.key===key)x.value=v});draw();$("status").textContent="有未保存的修改"}
 function draw(){const t=values.desktop,txt=copyText[language],wrap=$("wrap"),textLayer=$("textLayer"),copy=$("copyarea"),title=$("title"),sig=$("signature"),body=$("body"),scene=$("scene");scene.style.top="0";scene.style.left="0";scene.style.right="0";scene.style.width="100%";wrap.style.left=t.paperLeft+"%";wrap.style.top=t.paperTop+"%";wrap.style.width=t.paperWidth+"%";wrap.style.height=t.paperHeight+"%";wrap.style.transform="translate3d(0,"+(preview==="start"?t.startY:t.endY)+"%,0) rotate("+t.paperRotate+"deg) scale("+t.paperScale+")";textLayer.style.left=t.paperLeft+"%";textLayer.style.top=t.paperTop+"%";textLayer.style.width=t.paperWidth+"%";textLayer.style.height=t.paperHeight+"%";textLayer.style.transform=wrap.style.transform;$("paper").style.transform="scaleX("+t.paperStretchX+")";copy.style.left=t.textLeft+"%";copy.style.top=t.textTop+"%";copy.style.width=t.textWidth+"%";copy.style.height=t.textHeight+"%";copy.style.fontFamily=language==="zh"?"PawCN,PawEN,sans-serif":"PawEN,sans-serif";title.textContent=txt.title;sig.textContent=txt.signature;title.style.left=t.titleLeft+"%";title.style.top=t.titleTop+"%";title.style.width=t.titleWidth+"%";title.style.height=t.titleHeight+"%";title.style.fontSize=t.titleSize+"px";title.style.transform="scale("+t.titleFontScaleX+","+t.titleFontScaleY+")";title.style.transformOrigin="center top";sig.style.left=t.subtitleLeft+"%";sig.style.top=(language==="zh"?(t.zhSubtitleTop??t.subtitleTop):(t.enSubtitleTop??t.subtitleTop))+"%";sig.style.width=t.subtitleWidth+"%";sig.style.height=t.subtitleHeight+"%";sig.style.fontSize=t.subtitleSize+"px";sig.style.transform="scale("+t.subtitleFontScaleX+","+t.subtitleFontScaleY+")";sig.style.transformOrigin="center top";body.textContent=txt.body;body.style.left=(language==="zh"?t.zhBodyLeft:t.enBodyLeft)+"%";body.style.top=(language==="zh"?t.zhBodyTop:t.enBodyTop)+"%";body.style.width=(language==="zh"?t.zhBodyWidth:t.enBodyWidth)+"%";body.style.height=(language==="zh"?t.zhBodyHeight:t.enBodyHeight)+"%";body.style.fontSize=(language==="zh"?t.zhBodySize:t.enBodySize)+"px";body.style.transform="scale("+(language==="zh"?t.zhBodyFontScaleX:t.enBodyFontScaleX)+","+(language==="zh"?t.zhBodyFontScaleY:t.enBodyFontScaleY)+")";body.style.transformOrigin="left top";body.style.lineHeight=language==="zh"?(t.zhBodyLineHeight??t.bodyLineHeight):(t.enBodyLineHeight??t.bodyLineHeight);$("langZh").classList.toggle("active",language==="zh");$("langEn").classList.toggle("active",language==="en")}
 function switchProfile(p){profile=p;renderControls();draw()}
-function save(){localStorage.setItem("pawcream-letter-lab-desktop-v1",JSON.stringify({desktop:values.desktop,__copyText:copyText}));$("status").textContent="桌面参数与正文换行已保存到当前浏览器"}
+function save(){localStorage.setItem("pawcream-letter-lab-desktop-v2",JSON.stringify({desktop:values.desktop,__copyText:copyText}));$("status").textContent="桌面参数与正文换行已保存到当前浏览器"}
 function copyData(all){const text=JSON.stringify(all?{profile:"desktop",parameters:values.desktop,copyText:copyText}:{profile:"desktop",language:language,parameters:values.desktop,bodyText:copyText[language].body},null,2);if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(()=>$("status").textContent="参数已复制").catch(()=>prompt("复制参数",text));else prompt("复制参数",text)}
 function syncBodyEditor(){$("bodyTextEditor").value=copyText[language].body} $("bodyTextEditor").addEventListener("input",()=>{copyText[language].body=$("bodyTextEditor").value;draw();$("status").textContent="正文换行有未保存的修改"}); $("langZh").onclick=()=>{language="zh";syncBodyEditor();draw()};$("langEn").onclick=()=>{language="en";syncBodyEditor();draw()};$("start").onclick=()=>{preview="start";draw()};$("end").onclick=()=>{preview="end";draw()};$("replay").onclick=()=>{preview="start";draw();setTimeout(()=>{preview="end";draw()},values[profile].riseMs)};$("save").onclick=save;$("copy").onclick=()=>copyData(false);$("copyAll").onclick=()=>copyData(true);$("restore").onclick=()=>{const v=readSaved();if(v){values.desktop=Object.assign({},defaults.desktop,v.desktop||{});if(v.__copyText)for(const lang of ["zh","en"])if(v.__copyText[lang])copyText[lang]=Object.assign({},copyText[lang],v.__copyText[lang])}renderControls();syncBodyEditor();draw();$("status").textContent=v?"已恢复参数与正文换行":"当前浏览器没有已保存参数"};$("reset").onclick=()=>{values[profile]=Object.assign({},defaults[profile]);renderControls();draw();$("status").textContent="已重置当前设备参数，尚未保存"};renderControls();syncBodyEditor();draw();
 </script></body></html>
