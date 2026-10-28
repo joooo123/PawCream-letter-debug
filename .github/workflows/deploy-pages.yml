@@ -31,9 +31,34 @@ jobs:
           ref: debug-brand-letter-lab
           path: pawcream-source
 
+      - name: Checkout full PawCream app from deploy branch
+        uses: actions/checkout@v4
+        with:
+          repository: joooo123/PawCream
+          ref: deploy/aliyun-oss-pawcream-studio
+          path: pawcream-app-source
+
+      - name: Set up Node for full PawCream preview
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build full PawCream app for GitHub Pages
+        working-directory: pawcream-app-source
+        run: |
+          npm install
+          python3 -m pip install --disable-pip-version-check fonttools brotli
+          python3 scripts/convert-fonts.py
+          npm run build -- --base=/PawCream-letter-debug/pawcream-preview/
+          test -s dist/index.html
+          grep -q '/PawCream-letter-debug/pawcream-preview/assets/' dist/index.html
+          test -s dist/assets/font/pawcream-cn.woff2
+          test -s dist/assets/font/pawcream-en.woff2
+
       - name: Assemble static preview
         run: |
-          mkdir -p dist/xhs-letter-debug dist/assets/envelop dist/assets/font
+          mkdir -p dist/xhs-letter-debug dist/assets/envelop dist/assets/font dist/pawcream-preview
+          cp -R pawcream-app-source/dist/. dist/pawcream-preview/
           cp pawcream-source/public/xhs-letter-debug/index.html dist/xhs-letter-debug/index.html
           cp pawcream-source/public/assets/envelop/back.png dist/assets/envelop/
           cp pawcream-source/public/assets/envelop/paper.png dist/assets/envelop/
@@ -51,6 +76,9 @@ jobs:
           </html>
           EOF
           test -s dist/xhs-letter-debug/index.html
+          test -s dist/pawcream-preview/index.html
+          test -s dist/pawcream-preview/assets/font/pawcream-cn.woff2
+          test -s dist/pawcream-preview/assets/font/pawcream-en.woff2
           test -s dist/assets/envelop/paper.png
           test -s dist/assets/font/AaZiTiGuanJiaWanWanTi-2.ttf
 
